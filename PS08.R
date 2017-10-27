@@ -19,7 +19,7 @@ runtime
 # Get data ----------------------------------------------------------------
 # Accelerometer Biometric Competition Kaggle competition data
 # https://www.kaggle.com/c/accelerometer-biometric-competition/data
-train <- read_csv("~/Downloads/train.csv")
+train <- read_csv("~/Desktop/train.csv")
 
 # YOOGE!
 dim(train)
@@ -38,8 +38,6 @@ runtime_dataframe <- expand.grid(n_values, k_values) %>%
   rename(n=Var1, k=Var2) %>%
   mutate(runtime = n*k)
 runtime_dataframe
-
-
 
 
 # Time knn here -----------------------------------------------------------
