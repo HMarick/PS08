@@ -80,6 +80,6 @@ ggsave(filename="firstname_lastname.png", width=16, height = 9)
 # -k: number of neighbors to consider
 # -d: number of predictors used? In this case d is fixed at 3
 
-
+###HERE WE HAVE O(ndk)
 
 
