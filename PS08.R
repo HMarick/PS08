@@ -41,7 +41,7 @@ runtime_dataframe
 
 
 # Time knn here -----------------------------------------------------------
-n_values <- c(10000, 20000, 30000, 5000, 1000, 100000, 50000, 25000, 75000)
+n_values <- c(100000, 500000, 1000000, 2000000, 3000000, 4000000, 5000000)
 k_values <- c(1, 3, 5, 7, 9, 11, 13, 15)
 runtime<-rep(0, length(n_values)*length(k_values))
 k<-rep(0,length(n_values)*length(k_values)) #storage for k values
@@ -63,8 +63,9 @@ times<-data.frame(n=n, k=k, runtime=runtime)
 # Plot your results ---------------------------------------------------------
 # Think of creative ways to improve this barebones plot. Note: you don't have to
 # necessarily use geom_point
-runtime_plot <- ggplot(times, aes(x=n*k, y=runtime)) +
-  geom_point() + ggtitle("Runtime by N*K") +xlab("N*K") + ylab("Runtime")
+#runtime_plot <- ggplot(times, aes(x=n*k, y=runtime)) +
+ # geom_point() + ggtitle("Runtime by N*K") +xlab("N*K") + ylab("Runtime")
+runtime_plot <- ggplot(times, aes(x=n, y=runtime, col = k)) + geom_point()+ggtitle("Runtime by n")
 #I did not really like the colored plot. I did not think it was very helpful, so I changed the plot.
 
 runtime_plot
@@ -80,6 +81,6 @@ ggsave(filename="firstname_lastname.png", width=16, height = 9)
 # -k: number of neighbors to consider
 # -d: number of predictors used? In this case d is fixed at 3
 
-###HERE WE HAVE O(ndk)
+###HERE WE HAVE O(nd)
 
 
