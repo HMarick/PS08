@@ -81,6 +81,7 @@ ggsave(filename="firstname_lastname.png", width=16, height = 9)
 # -k: number of neighbors to consider
 # -d: number of predictors used? In this case d is fixed at 3
 
-###HERE WE HAVE O(nd)
+###Does not look like there is much of a relationship with k, but clear relationship with n
+###More predictors means more complexity, so there is a relationship there too: O(nd)
 
 
